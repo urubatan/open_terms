@@ -14,7 +14,7 @@ To use on a Rails project, add these two lines on your Gemfile:
 
 ```ruby
 gem 'open_terms'
-gem 'rb-appscript'
+gem 'rb-appscript' if RUBY_PLATFORM =~ /darwin/
 ```
 
 Now you can run:
@@ -27,7 +27,7 @@ If you want to run it without Rake:
 
 ```ruby
 require 'open_terms'
-require 'appscript' if RUBY_PLATFORM =~ /darwin/
+require 'rb-appscript' if RUBY_PLATFORM =~ /darwin/
 OpenTerms.rails_defaults
 ```
 
