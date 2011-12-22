@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version     = OpenTerms::VERSION
   s.authors     = ["Rodrigo Urubatan"]
   s.email       = ["rodrigo@urubatan.com.br"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.homepage    = "http://www.urubatan.com.br"
+  s.summary     = %q{Easy way to open many terminal windows for OSX and Linux}
+  s.description = %q{Easy way to open many terminals for OSX and Linux}
 
   s.rubyforge_project = "open_terms"
 
