@@ -1,5 +1,9 @@
 module Appscript
   def app(name)
-    $term_mock
+    if name=="System Events"
+      $system_mock
+    else
+      $term_mock
+    end
   end
 end

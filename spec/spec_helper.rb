@@ -1,6 +1,10 @@
 require 'rubygems'
 require 'bundler/setup'
 require 'rspec/autorun'
+require 'simplecov'
+SimpleCov.start do
+  add_filter "/spec/"
+end
 
 require 'open_terms' # and any other gems you need
 

@@ -1,6 +1,5 @@
 require 'spec_helper'
 require 'open_terms/gnome_terminal'
-require 'pry'
 module Kernel
   def `(args)
     $executor.run(args)
