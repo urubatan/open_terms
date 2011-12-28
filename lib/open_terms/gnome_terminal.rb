@@ -10,15 +10,10 @@ module OpenTerms
         run "xdotool windowfocus #{term_pid}"
         run "xdotool key ctrl+shift+t"
 
-        run "xdotool key ctrl+shift+alt+t"
-        run "xdotool type #{tab_name}"
-        run "xdotool key Return"
-
-        command.split(" ").each do |command_part|
-          run "xdotool type #{command_part}"
-          run "xdotool key space"
-        end
-
+        #run "xdotool key ctrl+shift+alt+t"
+        #run "xdotool type #{tab_name}"
+        #run "xdotool key Return"
+        run "xdotool type '#{command}'"
         run "xdotool key Return"
       end
     end

@@ -25,19 +25,11 @@ describe OpenTerms::GnomeTerminal do
     $executor.should_receive(:run).with('xdotool getactivewindow').and_return(2)
     execs = ["xdotool windowfocus 2",
              "xdotool key ctrl+shift+t",
-             "xdotool key ctrl+shift+alt+t",
-             "xdotool type title1",
-             "xdotool key Return",
-             "xdotool type command1",
-             "xdotool key space",
+             "xdotool type 'command1'",
              "xdotool key Return",
              "xdotool windowfocus 2",
              "xdotool key ctrl+shift+t",
-             "xdotool key ctrl+shift+alt+t",
-             "xdotool type title2",
-             "xdotool key Return",
-             "xdotool type command2",
-             "xdotool key space",
+             "xdotool type 'command2'",
              "xdotool key Return"].each do |cmd|
       $executor.should_receive(:run).with(cmd)
              end
