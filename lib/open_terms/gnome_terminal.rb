@@ -9,10 +9,6 @@ module OpenTerms
       commands.each do |tab_name, command|
         run "xdotool windowfocus #{term_pid}"
         run "xdotool key ctrl+shift+t"
-
-        #run "xdotool key ctrl+shift+alt+t"
-        #run "xdotool type #{tab_name}"
-        #run "xdotool key Return"
         run "xdotool type '#{command}'"
         run "xdotool key Return"
       end
@@ -21,7 +17,7 @@ module OpenTerms
     protected
 
     def run(command)
-      system(command) && sleep(0.05) || raise("Command #{command.inspect} failed")
+      system(command) && sleep(1) || raise("Command #{command.inspect} failed")
     end
   end
 end
