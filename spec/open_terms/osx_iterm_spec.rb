@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'appscript'
 describe OpenTerms::OsxIterm do
   it "should require appscript" do
-    $term_mock = mock("iTerm")
+    $term_mock = double("iTerm")
     $term_mock.should_receive(:activate)
     OpenTerms::OsxIterm.new
   end
@@ -11,11 +11,11 @@ describe OpenTerms::OsxIterm do
       ["title1", "command1"],
       ["title2", "command2"]
     ]
-    $term_mock = mock("iTerm")
+    $term_mock = double("iTerm")
     $term_mock.should_receive(:activate)
-    session_creator = mock("session_creator")
-    session1 = mock("session")
-    name_mock = mock("name")
+    session_creator = double("session_creator")
+    session1 = double("session")
+    name_mock = double("name")
     name_mock.should_receive(:set).with("title1")
     name_mock.should_receive(:set).with("title2")
     session_creator.should_receive(:make).twice.with(new: :session).and_return(session1)

@@ -11,7 +11,7 @@ module Kernel
 end
 describe OpenTerms::GnomeTerminal do
   it "should get the pid for the active terminal" do
-    $executor = mock("kernel")
+    $executor = double("kernel")
     $executor.should_receive(:run).with('xdotool getactivewindow').and_return(2)
     OpenTerms::GnomeTerminal.new.term_pid.should == 2
   end
@@ -21,7 +21,7 @@ describe OpenTerms::GnomeTerminal do
       ["title1", "command1"],
       ["title2", "command2"]
     ]
-    $executor = mock("kernel")
+    $executor = double("kernel")
     $executor.should_receive(:run).with('xdotool getactivewindow').and_return(2)
     execs = ["xdotool windowfocus 2",
              "xdotool key ctrl+shift+t",
